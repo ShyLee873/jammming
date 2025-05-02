@@ -1,7 +1,7 @@
 import React from 'react';
 import TrackList from './TrackList';
 
-function Playlist({ playlistName, setPlaylistName, playlistTracks, onRemove }) {
+function Playlist({ playlistName, setPlaylistName, playlistTracks, onRemove, onSave }) {
   const handleNameChange = (event) => {
     setPlaylistName(event.target.value);
   };
@@ -15,7 +15,7 @@ function Playlist({ playlistName, setPlaylistName, playlistTracks, onRemove }) {
         placeholder="Enter playlist name"
       />
       <TrackList tracks={playlistTracks} onRemove={onRemove} />
-      <button>Save to Spotify</button>
+      <button onClick={onSave}>Save to Spotify</button>
     </div>
   );
 }

@@ -8,19 +8,22 @@ const mockTracks = [
     id: 1,
     name: "Blinding Lights",
     artist: "The Weeknd",
-    album: "After Hours"
+    album: "After Hours",
+    uri: "spotify:track:1"
   },
   {
     id: 2,
     name: "Levitating",
     artist: "Dua Lipa",
-    album: "Future Nostalgia"
+    album: "Future Nostalgia",
+    uri: "spotify:track:2"
   },
   {
     id: 3,
     name: "Peaches",
     artist: "Justin Bieber",
-    album: "Justice"
+    album: "Justice",
+    uri: "spotify:track:3"
   }
 ];
 
@@ -40,6 +43,16 @@ function App() {
     setPlaylistTracks(playlistTracks.filter(t => t.id !== track.id));
   };
 
+  const savePlaylist = () => {
+    const trackUris = playlistTracks.map(track => track.uri);
+    console.log("Saving playlist:", playlistName);
+    console.log("Track URIs:", trackUris);
+  
+    // Reset playlist after saving
+    setPlaylistName("New Playlist");
+    setPlaylistTracks([]);
+  };
+
   return (
     <div>
       <h1>Jammming</h1>
@@ -51,6 +64,7 @@ function App() {
           setPlaylistName={setPlaylistName}
           playlistTracks={playlistTracks}
           onRemove={removeTrack}
+          onSave={savePlaylist}
         />
       </div>
     </div>
