@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SearchBar from './components/SearchBar';
 import SearchResults from './components/SearchResults';
 import Playlist from './components/Playlist';
@@ -26,13 +26,19 @@ const mockTracks = [
 
 
 function App() {
+  const [playlistName, setPlaylistName] = useState("My Playlist");
+  const [playlistTracks, setPlaylistTracks] = useState([]);
+
   return (
     <div>
       <h1>Jammming</h1>
       <SearchBar />
       <div className="app-content">
         <SearchResults tracks={mockTracks} />
-        <Playlist />
+        <Playlist
+          playlistName={playlistName}
+          playlistTracks={playlistTracks}
+        />
       </div>
     </div>
   );
