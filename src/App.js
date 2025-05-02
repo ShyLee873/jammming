@@ -6,34 +6,14 @@ import Spotify from './util/Spotify';
 
 Spotify.getAccessToken();
 
-const mockTracks = [
-  {
-    id: 1,
-    name: "Blinding Lights",
-    artist: "The Weeknd",
-    album: "After Hours",
-    uri: "spotify:track:1"
-  },
-  {
-    id: 2,
-    name: "Levitating",
-    artist: "Dua Lipa",
-    album: "Future Nostalgia",
-    uri: "spotify:track:2"
-  },
-  {
-    id: 3,
-    name: "Peaches",
-    artist: "Justin Bieber",
-    album: "Justice",
-    uri: "spotify:track:3"
-  }
-];
-
-
 function App() {
   const [playlistName, setPlaylistName] = useState("My Playlist");
   const [playlistTracks, setPlaylistTracks] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
+
+  const searchSpotify = (term) => {
+    Spotify.search(term).then(results => setSearchResults(results));
+  };
 
   const addTrack = (track) => {
     // Prevent duplicates
@@ -59,9 +39,9 @@ function App() {
   return (
     <div>
       <h1>Jammming</h1>
-      <SearchBar />
+      <SearchBar onSearch={searchSpotify} />
       <div className="app-content">
-        <SearchResults tracks={mockTracks} onAdd={addTrack} />
+        <SearchResults tracks={searchResults} onAdd={addTrack} />
         <Playlist
           playlistName={playlistName}
           setPlaylistName={setPlaylistName}
