@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import SearchBar from './components/SearchBar';
 import SearchResults from './components/SearchResults';
 import Playlist from './components/Playlist';
+import Spotify from './util/Spotify';
+
+Spotify.getAccessToken();
 
 const mockTracks = [
   {
