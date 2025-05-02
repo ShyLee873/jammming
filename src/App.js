@@ -29,16 +29,20 @@ function App() {
   const [playlistName, setPlaylistName] = useState("My Playlist");
   const [playlistTracks, setPlaylistTracks] = useState([]);
 
+  const addTrack = (track) => {
+    // Prevent duplicates
+    if (playlistTracks.find(savedTrack => savedTrack.id === track.id)) return;
+
+    setPlaylistTracks([...playlistTracks, track]);
+  };
+
   return (
     <div>
       <h1>Jammming</h1>
       <SearchBar />
       <div className="app-content">
-        <SearchResults tracks={mockTracks} />
-        <Playlist
-          playlistName={playlistName}
-          playlistTracks={playlistTracks}
-        />
+        <SearchResults tracks={mockTracks} onAdd={addTrack} />
+        <Playlist playlistName={playlistName} playlistTracks={playlistTracks} />
       </div>
     </div>
   );
