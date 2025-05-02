@@ -46,10 +46,12 @@ function App() {
       <SearchBar />
       <div className="app-content">
         <SearchResults tracks={mockTracks} onAdd={addTrack} />
-        <Playlist playlistName={playlistName}
-        playlistTracks={playlistTracks}
-        onRemove={removeTrack}
-         />
+        <Playlist
+          playlistName={playlistName}
+          setPlaylistName={setPlaylistName}
+          playlistTracks={playlistTracks}
+          onRemove={removeTrack}
+        />
       </div>
     </div>
   );
