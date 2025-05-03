@@ -2,7 +2,10 @@
 
 Jammming is a React-based web application that allows users to search the Spotify library, create custom playlists, and save them to their Spotify account.
 
-Built as part of the Codecademy Full-Stack Developer Path, it demonstrates working with React components, unidirectional data flow, state management with hooks, and the Spotify Web API.
+Built as part of the Codecademy Full-Stack Developer Path, it demonstrates working with React components, unidirectional data flow, state management with hooks, the Spotify Web API and nostalgic MySpace-eque styling.
+
+![image](https://github.com/user-attachments/assets/c559ce6e-a481-40b0-b2b9-e422f50de00e)
+
 
 ---
 
@@ -13,7 +16,8 @@ Built as part of the Codecademy Full-Stack Developer Path, it demonstrates worki
 - ✏️ Rename the playlist dynamically
 - 💾 Save the playlist directly to your Spotify account
 - 🔐 Uses OAuth token flow to access the user's Spotify data
-
+- 📸 Displays user profile image
+- 🖼 Displays album art
 ---
 
 
@@ -72,8 +76,8 @@ To run tests:
 
 ## 📦 Future Features
 
-- Pressing Enter triggers search
-- Include track previews
+- [x] Pressing Enter triggers search
+- [x] Include track previews
 - Show only tracks not already in playlist
 - Display loading spinner while saving
 - Persist search term after login redirect
