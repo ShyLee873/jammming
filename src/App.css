@@ -1,3 +1,7 @@
+body {
+  background-color: black;
+}
+
 .container {
   max-width: 1000px;
   margin: auto;
@@ -7,32 +11,92 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin: 20px;
   gap: 40px;
 }
 
 .left-pane, .right-pane {
   flex: 1;
-  padding: 10px;
+  padding: 20px;
+  margin-top: 60px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  background: white;
+  box-shadow: 0 0 10px 5px #48abe0,
+            0 0 20px 7px #ebecca,
+            0 0 25px 20px #8a2be2,
+            0 0 30px 25px #ff1493;
 }
 
 .left-pane{
+ min-width: 500px;
  max-width: 500px;
+ max-height: 500px;
+ overflow-y: auto;
+ margin-right: 30px;
+
 }
 
 .right-pane {
-  max-width: 500px;
+  min-width: 300px;
+  max-width: 300px;
+}
+
+.cardHeader {
+  text-align: center;
 }
 
 .header {
   text-align: center;
   margin-top: 20px;
+  margin-bottom: 40px;
+  color: white;
+  text-shadow: 0 0 20px #7f00ff,
+  0 0 30px #9831ff,
+  0 0 40px #ac59ff;
 }
 
 .searchBar {
   display: flex;
   justify-content: center;
   margin: 20px 0;
+  
+}
+
+input[type="text" i] {
+  text-align: center;
+  line-height: 30px;
+  min-width: 280px;
+  box-shadow: 0 0 3px 5px #48abe0,
+  0 0 12px 7px #ebecca,
+  0 0 17px 12px #8a2be2,
+  0 0 23px 17px #ff1493;
+}
+
+.left-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.addToPlaylist {
+  flex: 1;
+  margin-top: 80px;
+  min-width: 500px;
+  max-width: 500px;
+  max-height: 300px;
+  padding: 10px;
+  overflow-y: auto;
+  border: 1px solid var(--clr-three);
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px 5px #48abe0,
+  0 0 20px 7px #ebecca,
+  0 0 25px 20px #8a2be2,
+  0 0 30px 25px #ff1493;
+}
+
+.playlistInput {
+  margin: 10px;
+  margin-left: 25px;
+  position: sticky;
+  top: 10px;
 }

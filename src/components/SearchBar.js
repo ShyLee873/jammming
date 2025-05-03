@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './NeonButtons.css';
 
 function SearchBar({ onSearch }) {
   const [term, setTerm] = useState('');
@@ -18,7 +19,7 @@ function SearchBar({ onSearch }) {
         onChange={(e) => setTerm(e.target.value)}
         onKeyDown={handleKeyPress} // 👈 Add this!
       />
-      <button onClick={() => onSearch(term)}>Search</button>
+      <button className="neon-button" onClick={() => onSearch(term)}>Search</button>
     </div>
   );
 }

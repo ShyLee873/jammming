@@ -44,7 +44,7 @@ const Spotify = {
       });
   },
 
-  savecccccccccccccccccccccccccccccccccccccccccccccccccccccccccPlaylist(name, trackUris) {
+  savePlaylist(name, trackUris) {
     if (!name || !trackUris.length) return;
   
     const accessToken = this.getAccessToken();

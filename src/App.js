@@ -8,7 +8,7 @@ import Spotify from './util/Spotify';
 Spotify.getAccessToken();
 
 function App() {
-  const [playlistName, setPlaylistName] = useState("My Playlist");
+  const [playlistName, setPlaylistName] = useState();
   const [playlistTracks, setPlaylistTracks] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [userPlaylists, setUserPlaylists] = useState([]);
@@ -78,18 +78,23 @@ function App() {
       <SearchBar onSearch={searchSpotify} />
     </div>
       <div className="app-content">
-        <div className="left-pane">
-          <SearchResults tracks={searchResults} onAdd={addTrack} />
-          <Playlist
+        <div className='left-content'>
+          <div className="left-pane">
+            <SearchResults tracks={searchResults} onAdd={addTrack} />
+          </div>
+          <div className='addToPlaylist'>
+            <Playlist
             playlistName={playlistName}
             setPlaylistName={setPlaylistName}
             playlistTracks={playlistTracks}
             onRemove={removeTrack}
             onSave={savePlaylist}
-          />
+            />
+          </div>
         </div>
+
         <div className="right-pane">
-          <h2>{userName ? `${userName}'s Playlists` : 'My Playlists'}</h2>
+          <h2 className='cardHeader'>{userName ? `${userName}'s Playlists` : 'My Playlists'}</h2>
           <ul>
             {userPlaylists.map((pl) => (
               <li key={pl.id}>

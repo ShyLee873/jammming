@@ -8,14 +8,16 @@ function Playlist({ playlistName, setPlaylistName, playlistTracks, onRemove, onS
 
   return (
     <div>
-      <input
-        type="text"
-        value={playlistName}
-        onChange={handleNameChange}
-        placeholder="Enter playlist name"
-      />
+      <div className='playlistInput'>
+        <input
+          type="text"
+          value={playlistName}
+          onChange={handleNameChange}
+          placeholder="Enter playlist name"
+        />
+        <button className='neon-button' onClick={onSave}>Save to Spotify</button>
+      </div>  
       <TrackList tracks={playlistTracks} onRemove={onRemove} />
-      <button onClick={onSave}>Save to Spotify</button>
     </div>
   );
 }
