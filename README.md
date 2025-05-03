@@ -26,6 +26,32 @@ Built as part of the Codecademy Full-Stack Developer Path, it demonstrates worki
 
 ---
 
+## Getting Started
+
+1. Clone this repo:
+```
+git clone https://github.com/your-username/jammming.git
+cd jammming
+```
+
+2. Install Dependencies
+`npm install`
+
+3. Add a `.env` file:
+`REACT_APP_SPOTIFY_CLIENT_ID=your_spotify_client_id`
+
+4. Run the app:
+`npm start`
+The app will open at http://localhost:3000
+
+---
+
+## 🔒 Notes on Security
+- OAuth token is stored only in memory for the session.
+- .env file is gitignored to protect sensitive keys.
+
+---
+
 ## 🧪 Tests
 
 Component-level unit tests written with:
@@ -35,5 +61,20 @@ Component-level unit tests written with:
 
 To run tests:
 
-```bash
-npm test
+`npm test`
+
+---
+
+## 📦 Future Features
+
+- Pressing Enter triggers search
+- Include track previews
+- Show only tracks not already in playlist
+- Display loading spinner while saving
+- Persist search term after login redirect
+- Fetch and display user's saved playlists
+
+---
+
+## 🧑‍💻 Author
+Created by S Lertjuntharangool
