@@ -11,6 +11,7 @@ function TrackList({ tracks = [], onAdd, onRemove }) {
           artist={track.artist}
           album={track.album}
           preview={track.preview}
+          image={track.image} 
           track={track}
           onAdd={onAdd}
           onRemove={onRemove}
