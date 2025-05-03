@@ -7,10 +7,11 @@ function TrackList({ tracks = [], onAdd, onRemove }) {
       {tracks.map(track => (
         <Track
           key={track.id}
-          track={track}
           name={track.name}
           artist={track.artist}
           album={track.album}
+          preview={track.preview}
+          track={track}
           onAdd={onAdd}
           onRemove={onRemove}
         />
