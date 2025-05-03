@@ -3,13 +3,22 @@ import React, { useState } from 'react';
 function SearchBar({ onSearch }) {
   const [term, setTerm] = useState('');
 
-  const handleTermChange = (event) => setTerm(event.target.value);
-  const search = () => onSearch(term);
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      onSearch(term);
+    }
+  };
 
   return (
     <div>
-      <input placeholder="Search for a song..." onChange={handleTermChange} />
-      <button onClick={search}>Search</button>
+      <input
+        type="text"
+        placeholder="Search for a song..."
+        value={term}
+        onChange={(e) => setTerm(e.target.value)}
+        onKeyDown={handleKeyPress} // 👈 Add this!
+      />
+      <button onClick={() => onSearch(term)}>Search</button>
     </div>
   );
 }
