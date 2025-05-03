@@ -40,6 +40,11 @@ cd jammming
 3. Add a `.env` file:
 `REACT_APP_SPOTIFY_CLIENT_ID=your_spotify_client_id`
 
+🔑 Where do I get the Client ID?
+Go to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard), create an app, and copy your Client ID from there.
+Make sure to set the redirect URI in the Spotify app settings to:
+`http://localhost:3000`
+
 4. Run the app:
 `npm start`
 The app will open at http://localhost:3000
