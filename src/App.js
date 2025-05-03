@@ -13,6 +13,7 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [userPlaylists, setUserPlaylists] = useState([]);
   const [userName, setUserName] = useState('');
+  const [userImage, setUserImage] = useState(null);
 
   const fetchUserPlaylists = () => {
     const accessToken = Spotify.getAccessToken();
@@ -44,6 +45,20 @@ function App() {
 
   useEffect(() => {
     fetchUserPlaylists();
+  }, []);
+
+  useEffect(() => {
+    const accessToken = Spotify.getAccessToken();
+    const headers = { Authorization: `Bearer ${accessToken}` };
+  
+    fetch('https://api.spotify.com/v1/me', { headers })
+      .then(res => res.json())
+      .then(data => {
+        setUserName(data.display_name);
+        if (data.images && data.images.length > 0) {
+          setUserImage(data.images[0].url);
+        }
+      });
   }, []);
 
   const searchSpotify = (term) => {
@@ -93,15 +108,18 @@ function App() {
           </div>
         </div>
 
-        <div className="right-pane">
-          <h2 className='cardHeader'>{userName ? `${userName}'s Playlists` : 'My Playlists'}</h2>
-          <ul>
-            {userPlaylists.map((pl) => (
-              <li key={pl.id}>
-                {pl.name} ({pl.trackCount} tracks)
-              </li>
-            ))}
-          </ul>
+        <div className="right-content">
+          {userImage && <img src={userImage} alt="User avatar" className="user-avatar" />}
+          <div className='right-pane'>
+            <h2 className='cardHeader'>{userName ? `${userName}'s Playlists` : 'My Playlists'}</h2>
+            <ul>
+              {userPlaylists.map((pl) => (
+                <li key={pl.id}>
+                  {pl.name} ({pl.trackCount} tracks)
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

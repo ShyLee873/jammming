@@ -77,6 +77,11 @@ input[type="text" i] {
   flex-direction: column;
 }
 
+.right-content {
+  display: flex;
+  flex-direction: column;
+}
+
 .addToPlaylist {
   flex: 1;
   margin-top: 80px;
@@ -99,4 +104,17 @@ input[type="text" i] {
   margin-left: 25px;
   position: sticky;
   top: 10px;
+}
+
+.user-avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 50px auto 20px;
+  display: block;
+  box-shadow: 0 0 10px 5px #48abe0,
+  0 0 20px 7px #ebecca,
+  0 0 25px 20px #8a2be2,
+  0 0 30px 25px #ff1493;
 }
