@@ -14,7 +14,7 @@ function SearchBar({ onSearch }) {
     <div>
       <input
         type="text"
-        placeholder="Search for a song..."
+        placeholder="Search by song or artist"
         value={term}
         onChange={(e) => setTerm(e.target.value)}
         onKeyDown={handleKeyPress} // 👈 Add this!

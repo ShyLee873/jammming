@@ -13,7 +13,7 @@ function Playlist({ playlistName, setPlaylistName, playlistTracks, onRemove, onS
           type="text"
           value={playlistName}
           onChange={handleNameChange}
-          placeholder="Enter playlist name"
+          placeholder="Enter a name for your new playlist"
         />
         <button className='neon-button' onClick={onSave}>Save to Spotify</button>
       </div>  
